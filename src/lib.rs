@@ -53,7 +53,6 @@ pub fn derangements_fast(i: u32) -> BigInt {
                 let n2 = (n0 + &n1) * index;
                 n0 = replace(&mut n1, n2);
                 index += 1;
-
             }
             n1
         }
@@ -75,11 +74,10 @@ pub fn derangements_cached(x: usize) -> BigInt {
                 index = i + 1;
                 new = (n0 + n1) * i;
             }
-            cache.push_back((index, new))   
+            cache.push_back((index, new))
         }
 
         cache.iter().find(|&&(i, _)| i == x).unwrap().1.clone()
-        
     }
 }
 
@@ -135,5 +133,5 @@ mod tests {
         let expected = BigInt::from(1334961);
         assert_eq!(derangements_cached(10), expected);
     }
-    
+
 }
