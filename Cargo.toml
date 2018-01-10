@@ -1,0 +1,16 @@
+[package]
+name = "bigintbenchmark"
+version = "0.1.0"
+authors = ["Chris McDonald <mail.chris.mcdonald@gmail.com>"]
+
+[dependencies]
+num = "0.1.41"
+
+[profile.bench]
+opt-level = 3
+debug = false
+lto = true
+panic = 'abort'
+
+[profile.test]
+opt-level = 3
